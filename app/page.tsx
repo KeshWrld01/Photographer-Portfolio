@@ -4,7 +4,9 @@ import './globals.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faTwitter, faFacebookF, faTiktok } from '@fortawesome/free-brands-svg-icons';
 import 'aos/dist/aos.css';
+// @ts-ignore
 import AOS from 'aos';
+
 
 
 const Page = () => {

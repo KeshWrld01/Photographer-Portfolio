@@ -59,7 +59,7 @@ export default function ContactPage() {
     </div>
     <div className="form-group">
       <label htmlFor="message">Message</label>
-      <textarea id="message" rows="5" placeholder="Enter your message" required></textarea>
+      <textarea id="message" rows={5} placeholder="Enter your message" required></textarea>
     </div>
     <button type="submit">Send Message</button>
   </form>

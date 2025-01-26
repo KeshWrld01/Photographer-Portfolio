@@ -18,7 +18,7 @@ const galleryImages = [
 const Projects = () => {
   const router = useRouter();
 
-  const handleImageClick = (category) => {
+  const handleImageClick = (category: string) => {
     router.push(`/Projects/${category}`); // Navigate to dynamic gallery page
   };
 

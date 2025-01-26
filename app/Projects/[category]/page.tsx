@@ -30,7 +30,7 @@ const CategoryGallery: React.FC = () => {
   // State for modal visibility and the selected image
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
 
-  if (!category || !categoryImages[category]) {
+  if (!category || !categoryImages[category as string]) {
     return (
       <div className={styles.errorContainer}>
         <h2 className={styles.errorMessage}>Category not found!</h2>
@@ -38,7 +38,7 @@ const CategoryGallery: React.FC = () => {
     );
   }
 
-  const images = categoryImages[category];
+  const images = categoryImages[category as string];
 
   const openModal = (image: Image) => {
     setSelectedImage(image);
