@@ -1,0 +1,125 @@
+.galleryContainer {
+    background: transparent;
+    color: white;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .galleryTitle {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 50px;
+    color: #3b0aef;
+    padding-top: 1px;
+  }
+  
+  .galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 80px; /* Space between images */
+    width: 100%;
+    gap: 80px;
+    max-width: 1000px; /* Optional: limit gallery width */
+    margin: 0 auto; /* Center gallery horizontally */
+    min-width: 80px;
+    gap: 150px; /* Adjust spacing between items */
+
+  }
+  
+  .galleryItem img {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 0;
+    margin-left: 1px;
+    padding-left: 1px;    
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 60vh;
+    min-width: 60vh;
+    object-fit: cover; /* Ensures images fill the grid item without distortion */
+
+  }
+  
+  .galleryItem img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Modal styles */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 60%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-in-out;
+
+  }
+  
+  .modalContent {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    max-width: 50%;
+    max-height: 20%;
+    background: transparent;
+    padding: 20px;
+    border-radius: 10px;
+    margin-left: 180px;
+    justify-content: center;
+    align-items: center;
+    animation: zoomOut 0.3s ease-in-out;
+
+  }
+  
+  .modalContent img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .closeButton:hover {
+    color: #ff4d4d;
+  }
+  /* Animations */
+@keyframes fadeIn {
+    from {
+      background-color: rgba(0, 0, 0, 0);
+    }
+    to {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  }
+  
+  @keyframes zoomOut {
+    from {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }

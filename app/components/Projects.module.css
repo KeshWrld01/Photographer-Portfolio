@@ -1,0 +1,89 @@
+.galleryContainer {
+  background: transparent;
+  color: white;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.galleryTitle {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+  color: #3b0aef;
+  padding-top: 30px;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 80px; /* Space between images */
+  width: 100%;
+  max-width: 1400px; /* Optional: limit gallery width */
+  margin: 0 auto; /* Center gallery horizontally */
+  min-width: 80px;
+}
+
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  height: 0;
+  padding-top: 75%; /* Maintain aspect ratio */
+  min-height: 60vh;
+  min-width: 60vh;
+  border-radius: 8px; /* Slight rounding for style */
+  margin-left: 1px;
+  padding-left: 1px;
+
+
+}
+
+.galleryItem:hover {
+  transform: scale(1.05);
+}
+
+.galleryItem img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.galleryItem:hover img {
+  opacity: 0.8;
+}
+
+.galleryOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.galleryItem:hover .galleryOverlay {
+  opacity: 1;
+}
+
+.overlayText {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
